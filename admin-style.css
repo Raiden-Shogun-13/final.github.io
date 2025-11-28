@@ -1,0 +1,559 @@
+/* admin-style.css (moved from assets/) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #121212;
+  --bg-alt: #1e1e1e;
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --text-color: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --error-color: #ef4444;
+  --success-color: #22c55e;
+  --border-color: #333;
+  --transition-speed: 0.3s;
+  --radius: 6px;
+  --font-family: 'Inter', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{margin:0;background-color:var(--bg-color);color:var(--text-color);font-family:var(--font-family);line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+
+header{background:var(--bg-alt);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);user-select:none}
+header h1{font-weight:600;font-size:1.5rem;margin:0}
+.logout-btn{padding:0.4rem 1rem;font-weight:600;color:var(--text-muted);background:none;border:1px solid var(--text-muted);border-radius:var(--radius);cursor:pointer;text-decoration:none;transition:background-color var(--transition-speed),color var(--transition-speed)}
+.logout-btn:hover,.logout-btn:focus{background-color:var(--primary-color);border-color:var(--primary-color);color:#fff;outline:none}
+main{flex-grow:1;padding:1.5rem 2rem;max-width:1200px;margin:0 auto;width:100%}
+.alert{padding:1rem 1.5rem;border-radius:var(--radius);margin-bottom:1rem;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,0.3)}
+.alert.error{background-color:var(--error-color);color:#fff}
+.alert.success{background-color:var(--success-color);color:#000}
+.tabs{display:flex;border-bottom:2px solid var(--border-color);margin-bottom:1rem;gap:0.5rem;flex-wrap:wrap;user-select:none}
+.tab{background-color:var(--bg-alt);border:none;color:var(--text-muted);padding:0.6rem 1.2rem;cursor:pointer;border-radius:var(--radius) var(--radius) 0 0;font-weight:600;transition:background-color var(--transition-speed),color var(--transition-speed)}
+.tab:hover,.tab:focus{background-color:var(--primary-hover);color:#fff;outline:none}
+.tab.active{background-color:var(--primary-color);color:#fff;border-bottom:2px solid var(--primary-color)}
+.table-wrapper{overflow-x:auto;background-color:var(--bg-alt);border-radius:var(--radius);box-shadow:0 0 8px rgba(0,0,0,0.3)}
+table{width:100%;border-collapse:collapse;min-width:800px}
+th,td{padding:0.75rem 1rem;border-bottom:1px solid var(--border-color);text-align:left;vertical-align:middle}
+th{background-color:var(--bg-color);color:var(--primary-color);font-weight:700;position:sticky;top:0;z-index:1}
+tbody tr:hover{background-color:#2a2a2a}
+td.center{text-align:center;color:var(--text-muted)}
+.status-pending{color:#fbbf24;font-weight:700}
+.status-confirmed{color:#3b82f6;font-weight:700}
+.status-completed{color:#22c55e;font-weight:700}
+.status-canceled{color:var(--error-color);font-weight:700}
+form{margin:0}
+form.inline{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+form.inline select,form.inline button,form button,form input[type="text"],form input[type="number"],form textarea{font-family:var(--font-family);font-size:1rem;border-radius:var(--radius);border:1px solid var(--border-color);background-color:var(--bg-color);color:var(--text-color);padding:0.4rem 0.75rem;transition:border-color var(--transition-speed);user-select:text}
+form.inline select:focus,form.inline button:focus,form input[type="text"]:focus,form input[type="number"]:focus,form textarea:focus{border-color:var(--primary-color);outline:none}
+form.inline button,form button{background-color:var(--primary-color);color:#fff;cursor:pointer;border:none;font-weight:600;padding:0.5rem 1rem;transition:background-color var(--transition-speed)}
+form.inline button:hover,form.inline button:focus,form button:hover,form button:focus{background-color:var(--primary-hover);outline:none}
+form.inline select{min-width:120px}
+#services form > div{margin-bottom:1rem}
+#services label{font-weight:600;display:block;margin-bottom:0.25rem}
+#services textarea{resize:vertical;min-height:60px}
+@media (max-width:900px){.table-wrapper table{min-width:600px}form.inline{flex-direction:column;align-items:stretch}form.inline select,form.inline button{width:100%}}
+@media (max-width:600px){header{flex-direction:column;align-items:flex-start}header h1{margin-bottom:0.5rem}}
+
+:root{--color-primary:#1e88e5;--color-primary-dark:#1565c0;--color-accent:#ffb300;--color-bg:#f5f7fa;--color-text:#222;--color-text-light:#555;--border-radius:12px;--shadow-light:0 5px 15px rgba(30,136,229,0.15);--shadow-hover:0 8px 25px rgba(21,101,192,0.3);--font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+body{background:var(--color-bg);font-family:var(--font-family);color:var(--color-text);margin:0;padding:0 1rem 3rem;-webkit-font-smoothing:antialiased}
+.booking-form{max-width:520px;margin:3rem auto 4.5rem;background:white;border-radius:var(--border-radius);box-shadow:var(--shadow-light);padding:2.5rem 3rem;user-select:none}
+.form-group{position:relative;margin-bottom:2.2rem}
+.form-group label{position:absolute;top:14px;left:16px;color:var(--color-primary-dark);font-weight:700;font-size:1.1rem;pointer-events:none;transition:all 0.25s ease;background:white;padding:0 6px;border-radius:4px}
+select,input[type="datetime-local"]{width:100%;padding:14px 16px;font-size:1.1rem;border:2px solid #cfd8dc;border-radius:var(--border-radius);transition:border-color 0.3s ease,box-shadow 0.3s ease;font-family:var(--font-family)}
+select:focus,input[type="datetime-local"]:focus{border-color:var(--color-primary);box-shadow:0 0 8px var(--color-primary);outline:none}
+select:focus + label,select:not(:placeholder-shown) + label,input[type="datetime-local"]:focus + label,input[type="datetime-local"]:not(:placeholder-shown) + label{top:-10px;left:12px;font-size:0.85rem;color:var(--color-primary)}
+select:invalid,input[type="datetime-local"]:invalid{color:#999}
+.booking-form button{width:100%;background:var(--color-primary);color:white;font-weight:700;font-size:1.3rem;padding:1rem 1.25rem;border-radius:40px;border:none;box-shadow:0 5px 15px rgba(30,136,229,0.4);cursor:pointer;transition:background-color 0.3s ease,box-shadow 0.3s ease;user-select:none}
+.booking-form button:hover,.booking-form button:focus{background:var(--color-primary-dark);box-shadow:0 8px 25px rgba(21,101,192,0.7);outline:none}
+
+/* Admin grid and responsive panels */
+.admin-grid{display:grid;grid-template-columns:1fr 2fr;gap:1.25rem;align-items:start}
+.panel{background:white;border-radius:12px;padding:1rem;box-shadow:var(--shadow-light);color:var(--color-text)}
+.panel h3{margin-top:0;color:var(--color-primary-dark)}
+@media (max-width:900px){.admin-grid{grid-template-columns:1fr}.table-wrapper table{min-width:100%}}
+@media (max-width:700px){table,thead,tbody,th,td,tr{display:block}thead tr{position:absolute;top:-9999px;left:-9999px}tbody tr{margin:0 0 1rem 0;background:#fff;padding:0.8rem;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}tbody td{border:none;padding:0.4rem 0;display:flex;justify-content:space-between}tbody td::before{content:attr(data-label);color:var(--color-text-light);font-weight:700;margin-right:0.5rem}.inline{display:block;gap:0.5rem}form.inline select,form.inline button{width:100%}}
+.status-pending{background:#fff7ed;padding:6px 10px;border-radius:8px;display:inline-block}
+.status-confirmed{background:#eef2ff;padding:6px 10px;border-radius:8px;display:inline-block}
+.status-completed{background:#ecfdf5;padding:6px 10px;border-radius:8px;display:inline-block}
+.status-canceled{background:#fff1f2;padding:6px 10px;border-radius:8px;display:inline-block}
+.top-actions{display:flex;gap:0.75rem;align-items:center}
+.top-actions a.button{background:var(--color-primary);color:#fff;padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-weight:700;display:inline-flex;gap:0.5rem;align-items:center}
+.top-actions a.button svg{width:16px;height:16px;opacity:0.95}
+/* This file has been moved to `assets/admin-style.css`.
+   Keeping an empty placeholder here to avoid breaking legacy references.
+   Please remove this file once your server is serving `assets/admin-style.css`.
+*/
+
+/* placeholder */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(90deg, rgba(79,70,229,0.12), rgba(37,99,235,0.06));
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  user-select: none;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.logout-btn {
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.brand {
+  display:flex;align-items:center;gap:0.75rem;
+}
+.brand .logo-mark{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:linear-gradient(180deg,var(--primary-color),var(--primary-hover));box-shadow:0 6px 18px rgba(79,70,229,0.18);}
+.brand .logo-mark svg{width:22px;height:22px;fill:#fff}
+.brand .brand-text{font-weight:800;color:var(--text-color);font-size:1rem}
+
+.header-meta{display:flex;gap:0.6rem;align-items:center}
+.user-pill{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:999px;color:var(--text-muted);font-weight:600}
+
+.logout-btn:hover,
+.logout-btn:focus {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  outline: none;
+}
+
+main {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.alert.error {
+  background-color: var(--error-color);
+  color: #fff;
+}
+
+.alert.success {
+  background-color: var(--success-color);
+  color: #000;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.tab {
+  background-color: var(--bg-alt);
+  border: none;
+  color: var(--text-muted);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: var(--radius) var(--radius) 0 0;
+  font-weight: 600;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.tab:hover,
+.tab:focus {
+  background-color: var(--primary-hover);
+  color: #fff;
+  outline: none;
+}
+
+.tab.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: var(--bg-alt);
+  border-radius: var(--radius);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+td.center {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.status-pending {
+  color: #fbbf24; /* yellow */
+  font-weight: 700;
+}
+
+.status-confirmed {
+  color: #3b82f6; /* blue */
+  font-weight: 700;
+}
+
+.status-completed {
+  color: #22c55e; /* green */
+  font-weight: 700;
+}
+
+.status-canceled {
+  color: var(--error-color);
+  font-weight: 700;
+}
+
+/* Forms */
+form {
+  margin: 0;
+}
+
+form.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+form.inline select,
+form.inline button,
+form button,
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.75rem;
+  transition: border-color var(--transition-speed);
+  user-select: text;
+}
+
+form.inline select:focus,
+form.inline button:focus,
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+form.inline button,
+form button {
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: background-color var(--transition-speed);
+}
+
+form.inline button:hover,
+form.inline button:focus,
+form button:hover,
+form button:focus {
+  background-color: var(--primary-hover);
+  outline: none;
+}
+
+form.inline select {
+  min-width: 120px;
+}
+
+#services form > div {
+  margin-bottom: 1rem;
+}
+
+#services label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+#services textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .table-wrapper table {
+    min-width: 600px;
+  }
+  form.inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  form.inline select,
+  form.inline button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+ :root {
+    --color-primary: #1e88e5;
+    --color-primary-dark: #1565c0;
+    --color-accent: #ffb300;
+    --color-bg: #f5f7fa;
+    --color-text: #222;
+    --color-text-light: #555;
+    --border-radius: 12px;
+    --shadow-light: 0 5px 15px rgba(30, 136, 229, 0.15);
+    --shadow-hover: 0 8px 25px rgba(21, 101, 192, 0.3);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: var(--color-bg);
+    font-family: var(--font-family);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0 1rem 3rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Booking Form Container */
+  .booking-form {
+    max-width: 520px;
+    margin: 3rem auto 4.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    padding: 2.5rem 3rem;
+    user-select: none;
+  }
+
+  /* Floating Label Wrapper */
+  .form-group {
+    position: relative;
+    margin-bottom: 2.2rem;
+  }
+
+  /* Hide native label for visual enhancement, but keep for accessibility */
+  .form-group label {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    background: white;
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+
+  /* Form controls */
+  select, input[type="datetime-local"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    border: 2px solid #cfd8dc;
+    border-radius: var(--border-radius);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-family);
+  }
+
+  select:focus, input[type="datetime-local"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-primary);
+    outline: none;
+  }
+
+  /* Float label when input has focus or value */
+  select:focus + label,
+  select:not(:placeholder-shown) + label,
+  input[type="datetime-local"]:focus + label,
+  input[type="datetime-local"]:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+  }
+
+  /* Placeholder text trick */
+  select:invalid, input[type="datetime-local"]:invalid {
+    color: #999;
+  }
+
+  /* Button style */
+  .booking-form button {
+    width: 100%;
+    background: var(--color-primary);
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1rem 1.25rem;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(30, 136, 229, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .booking-form button:hover,
+  .booking-form button:focus {
+    background: var(--color-primary-dark);
+    box-shadow: 0 8px 25px rgba(21, 101, 192, 0.7);
+    outline: none;
+  }
+
+/* Admin grid and responsive panels */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.panel {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-light);
+  color: var(--color-text);
+}
+.panel h3 { margin-top: 0; color: var(--color-primary-dark); }
+
+/* Make table more readable on small screens: collapse rows to cards */
+@media (max-width: 900px) {
+  .admin-grid { grid-template-columns: 1fr; }
+  table { min-width: 100%; }
+}
+
+@media (max-width: 700px) {
+  /* Convert appointment rows into stacked cards */
+  table, thead, tbody, th, td, tr { display: block; }
+  thead tr { position: absolute; top: -9999px; left: -9999px; }
+  tbody tr { margin: 0 0 1rem 0; background: #fff; padding: 0.8rem; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+  tbody td { border: none; padding: 0.4rem 0; display: flex; justify-content: space-between; }
+  tbody td::before { content: attr(data-label); color: var(--color-text-light); font-weight: 700; margin-right: 0.5rem; }
+  .inline { display:block; gap:0.5rem; }
+  form.inline select, form.inline button { width: 100%; }
+}
+
+/* Small visual tweaks */
+.status-pending { background: #fff7ed; padding: 6px 10px; border-radius: 8px; display:inline-block; }
+.status-confirmed { background: #eef2ff; padding: 6px 10px; border-radius: 8px; display:inline-block; }
+.status-completed { background: #ecfdf5; padding: 6px 10px; border-radius: 8px; display:inline-block; }
+.status-canceled { background: #fff1f2; padding: 6px 10px; border-radius: 8px; display:inline-block; }
+
+.top-actions { display:flex; gap:0.75rem; align-items:center; }
+.top-actions a.button { background:var(--color-primary); color:#fff; padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; gap:0.5rem; align-items:center }
+.top-actions a.button svg{width:16px;height:16px;opacity:0.95}
+
+
+  /* Messages */
+  .message {
+    max-width: 520px;
+    margin: 1rem auto 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1.3rem 1.5rem;
+  }
+  .message.error {
+    background: #ffebee;
+    color: #b00020;
+    border: 2px solid #b00020;
+  }
+  .message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .booking-form {
+      padding: 2rem 1.8rem;
+      margin: 2rem 1rem 3rem;
+    }
+  }
+  .service-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #1e88e5;
+  margin-top: 0.8rem;
+}
